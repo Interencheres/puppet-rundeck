@@ -28,7 +28,7 @@ define rundeck::config::plugin(
 ) {
 
   include '::rundeck'
-  include 'archive'
+  include '::wget'
 
   $framework_config = deep_merge($::rundeck::params::framework_config, $::rundeck::framework_config)
 
@@ -44,12 +44,12 @@ define rundeck::config::plugin(
 
   if $ensure == 'present' {
 
-    archive { "download plugin ${name}":
-      ensure  => present,
-      source  => $source,
-      path    => "${plugin_dir}/${name}",
-      require => File[$plugin_dir],
-      before  => File["${plugin_dir}/${name}"],
+    wget::fetch { "download plugin ${name}":
+      source      => $source,
+      destination => "${plugin_dir}/${name}",
+      timeout     => 0,
+      verbose     => false,
+      require => File[$plugin_dir]
     }
 
     file { "${plugin_dir}/${name}":
