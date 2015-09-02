@@ -32,3 +32,10 @@ grails.mail.default.from = "<%= @mail_config['defaults.from'] %>"
 <%- end -%>
 grails.serverURL = "<%= @grails_server_url %>"
 rundeck.clusterMode.enabled = "<%= @clustermode_enabled %>"
+
+<%- if !@file_storage_plugin.empty? %>
+rundeck.execution.logs.fileStoragePlugin = "@fileStoragePlugin"
+<%- end -%>
+
+rundeck.projectsStorageType = "<%= @project_storage_type %>"
+
