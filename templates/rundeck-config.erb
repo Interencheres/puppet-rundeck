@@ -34,7 +34,7 @@ grails.serverURL = "<%= @grails_server_url %>"
 rundeck.clusterMode.enabled = "<%= @clustermode_enabled %>"
 
 <%- if defined?(@file_storage_plugin) %>
-rundeck.execution.logs.fileStoragePlugin = "@fileStoragePlugin"
+rundeck.execution.logs.fileStoragePlugin = "<%= @fileStoragePlugin %>"
 <%- end -%>
 
 rundeck.projectsStorageType = "<%= @project_storage_type %>"
