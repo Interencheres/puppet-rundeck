@@ -32,6 +32,8 @@ class rundeck::config(
   $security_config       = $rundeck::security_config,
   $acl_policies          = $rundeck::acl_policies,
   $api_policies          = $rundeck::api_policies
+  $file_storage_plugin   = $rundeck::file_storage_plugin,
+  $project_storage_type  = $rundeck::project_storage_type,
 ) inherits rundeck::params {
 
   $framework_config = deep_merge($rundeck::params::framework_config, $rundeck::framework_config)
