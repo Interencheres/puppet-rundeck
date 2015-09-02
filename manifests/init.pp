@@ -139,6 +139,8 @@ class rundeck (
   $server_web_context           = $rundeck::params::server_web_context,
   $jvm_args                     = $rundeck::params::jvm_args,
   $rdeck_home                   = $rundeck::params::rdeck_home,
+  $file_storage_plugin          = $rundeck::params::file_storage_plugin,
+  $project_storage_type         = $rundeck::params::project_storage_type,
 ) inherits rundeck::params {
 
   #validate_re($package_ensure, '\d+\.\d+\.\d+')
@@ -167,6 +169,8 @@ class rundeck (
   validate_string($server_web_context)
   validate_absolute_path($rdeck_home)
   validate_rd_policy($acl_policies)
+  validate_string($file_storage_plugin)
+  validate_string($project_storage_type)
 
   class { 'rundeck::facts': } ->
   class { 'rundeck::install': } ->
