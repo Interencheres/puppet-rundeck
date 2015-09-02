@@ -264,4 +264,7 @@ class rundeck::params {
   $ssl_port = '4443'
 
   $package_source = 'https://dl.bintray.com/rundeck/rundeck-deb'
+
+  $file_storage_plugin = undef
+  $project_storage_type = 'filesystem'
 }
