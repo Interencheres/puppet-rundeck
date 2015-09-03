@@ -39,3 +39,9 @@ rundeck.execution.logs.fileStoragePlugin = "<%= @file_storage_plugin %>"
 
 rundeck.projectsStorageType = "<%= @project_storage_type %>"
 
+<%- if !@rundeck_config.empty? %>
+<%- @rundeck_config.sort.each do |k,v| -%>
+    <%= k %> = "<%= v %>"
+<%- end -%>
+<%- end -%>
+

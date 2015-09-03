@@ -206,6 +206,7 @@ class rundeck::params {
   }
 
   $mail_config = {}
+  $rundeck_config = {}
 
   $security_config = {
     'useHMacRequestTokens' => true,

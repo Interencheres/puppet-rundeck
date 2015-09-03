@@ -19,6 +19,7 @@ class rundeck::config::global::rundeck_config(
   $security_config      = $rundeck::config::security_config,
   $file_storage_plugin  = $rundeck::config::file_storage_plugin,
   $project_storage_type = $rundeck::config::project_storage_type,
+  $rundeck_config       = $rundeck::config::rundeck_config,
 ) {
 
   $properties_file = "${properties_dir}/rundeck-config.groovy"

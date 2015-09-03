@@ -115,6 +115,7 @@ class rundeck (
   $service_logs_dir             = $rundeck::params::service_logs_dir,
   $ssl_enabled                  = $rundeck::params::ssl_enabled,
   $framework_config             = $rundeck::params::framework_config,
+  $rundeck_config               = $rundeck::params::rundeck_config,
   $projects_organization        = $rundeck::params::projects_default_org,
   $projects_description         = $rundeck::params::projects_default_desc,
   $rd_loglevel                  = $rundeck::params::loglevel,
@@ -164,6 +165,7 @@ class rundeck (
   validate_string($service_name)
   validate_string($package_ensure)
   validate_hash($mail_config)
+  validate_hash($rundeck_config)
   validate_string($user)
   validate_string($group)
   validate_string($server_web_context)
