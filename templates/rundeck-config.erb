@@ -41,7 +41,7 @@ rundeck.projectsStorageType = "<%= @project_storage_type %>"
 
 <%- if !@rundeck_config.empty? %>
 <%- @rundeck_config.sort.each do |k,v| -%>
-    <%= k %> = "<%= v %>"
+<%=k%> = "<%= v %>"
 <%- end -%>
 <%- end -%>
 
